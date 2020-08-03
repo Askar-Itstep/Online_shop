@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="{% static 'jquery/script.js' %}"></script>
+</head>
+<body>
+
+<a href="/" id="title"><h1>Django shop</h1></a>
+
+{% block title %}
+<div id="header"></div>
+{% endblock %}
+
+{#-------------продолж. (начало в shop/urls стр.10)---------------#}
+{% if cart %}
+    <div class="hidden cart_len">{{ cart|length }}</div>
+    <div class="hidden cart_sum">{{ cart.get_total_price }}</div>
+{#{% else %}#}
+{#    <div class="visible cart_len"></div>#}
+{#    обработка в script.js#}
+{% endif %}
+{#--------------------------------------------#}
+
+<div id="subheader">
+    <div class="container">
+        <ul class="subcontainer">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/cart">Cart</a></li>
+        </ul>
+    </div>
+    <div class="cart">
+        {% with total_items=cart|length %}
+          {% if total_items > 0 %}
+            Your cart:
+            <a href="{% url "cart:cart_detail" %}">
+              {{ total_items }} item{{ total_items|pluralize }},
+              ${{ cart.get_total_price }}
+            </a>
+          {% else %}
+              <a href="{% url "cart:cart_detail" %}">
+               Your cart is empty
+              </a>
+          {% endif %}
+        {% endwith %}
+    </div>
+</div>
+<div class="content">
+{%block content %}
+
+{%endblock%}
+</div>
+<div class="container" id="footer">
+    <div>tel: +222-322-23-17</div>
+    <div>ItStep 2020</div>
+    <div>Copy right all reserved</div>
+
+</div>
+</body>
+</html>
