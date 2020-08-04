@@ -1,2 +1,2 @@
 # Online_shop
-![CollageDjangoShop](https://user-images.githubusercontent.com/58872563/89207120-14666e00-d5dc-11ea-8dc8-bffdea6e5c8c.jpg)
+![m_merged (3)](https://user-images.githubusercontent.com/58872563/89250432-96838080-d636-11ea-8ea2-1c570975cba2.png)
