@@ -26,5 +26,25 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://127.0.0.1:5432/Shop</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="db [2]" uuid="18df675f-7ac1-48b5-9d55-bcffbdbeffe1">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Askar\PycharmProjects\Online_shop\myshop\db.sqlite3</jdbc-url>
+      <libraries>
+        <library>
+          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.25.1/license.txt</url>
+        </library>
+        <library>
+          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.25.1/sqlite-jdbc-3.25.1.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+    <data-source source="LOCAL" name="User Data Source - postgres://Askar Rahimzhanov:root@127.0.0.1:5432/Shop?" uuid="75d6f6d5-a5e5-49b1-9485-37933949f5f0">
+      <synchronize>true</synchronize>
+      <configured-by-url>true</configured-by-url>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>postgres://Askar Rahimzhanov:root@127.0.0.1:5432/Shop?</jdbc-url>
+    </data-source>
   </component>
 </project>

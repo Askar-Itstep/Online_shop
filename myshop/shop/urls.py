@@ -6,9 +6,7 @@ from . import views
 app_name='shop'
 
 
-
-# cart = Cart(request)     # -нет объекта запроса!
-# #cart.get_total_price() # None! - нужно через фронтенд (стр. 19 base.html)
+# в TemplateView теперь тоже видно корзину (контекстный процессор)
 
 
 urlpatterns = [
