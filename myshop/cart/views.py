@@ -12,10 +12,10 @@ def cart_add(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     form = CartAddProductForm(request.POST)  # -благодаря этому отпадает необходим. в JS-коде (ajax..)
     if form.is_valid():
-        cart_data = form.cleaned_data       # read data out form
+        cart_data = form.cleaned_data
         cart.add(product=product,
                  quantity=cart_data['quantity'],
-                 # override_quantity=cart_data['override']
+                 override_quantity=cart_data['override']
                  )
 
         #url.py: path('', views.cart_detail, name='cart_detail'),+стр. 30 (def cart_detail())

@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="{% static 'jquery/script.js' %}"></script>
+{#    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>#}
+{#    <script src="{% static 'jquery/script.js' %}"></script>#}
 </head>
 <body>
 
@@ -17,13 +17,13 @@
 {% endblock %}
 
 {#-------------продолж. (начало в shop/urls стр.10)---------------#}
-{% if cart %}
-    <div class="hidden cart_len">{{ cart|length }}</div>
-    <div class="hidden cart_sum">{{ cart.get_total_price }}</div>
+{#{% if cart %}#}
+{#    <div class="hidden cart_len">{{ cart|length }}</div>#}
+{#    <div class="hidden cart_sum">{{ cart.get_total_price }}</div>#}
 {#{% else %}#}
 {#    <div class="visible cart_len"></div>#}
 {#    обработка в script.js#}
-{% endif %}
+{#{% endif %}#}
 {#--------------------------------------------#}
 
 <div id="subheader">
