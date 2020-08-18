@@ -2,6 +2,7 @@ from django import forms
 from django.contrib import admin
 
 # Register your models here.
+from django.contrib.admin import helpers
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
@@ -38,9 +39,10 @@ def move_to_category(modeladmin, request, queryset):
             return HttpResponseRedirect(request.get_full_path())
 
     if not form:
-        form = ChangeCategoryForm(initial={'_selected_action': request.POST.getlist(admin.ACTION_CHECKBOX_NAME)})
+        ##----после изм. версии Django надо изм. admin.ACTION_CHECKBOX_NAME --> helpers.ACTION_CHECKBOX_NAME
+        form = ChangeCategoryForm(initial={'_selected_action': request.POST.getlist(helpers.ACTION_CHECKBOX_NAME)})
 
-    return render(request, 'shop/product/move_to_category.html',
+    return render(request, 'product/move_to_category.html',
                   {'items': queryset, 'form': form, 'title': u'Изменение категории'})
 
 move_to_category.short_description = "Сhange the category"
@@ -52,6 +54,7 @@ class ProductAdmin(admin.ModelAdmin):
   list_display = ['name', 'slug', 'price', 'image', 'description', 'available', 'created', 'update']
   list_editable = ['slug', 'available', 'image', 'price', 'description']
   prepopulated_fields = {'slug': ('name',)}
+  actions = [move_to_category]
 
 
 
